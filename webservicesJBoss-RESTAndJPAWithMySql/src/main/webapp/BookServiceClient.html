@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <style type="text/css">
+        table.gridtable {
+            font-family: verdana, arial, sans-serif;
+            font-size: 11px;
+            color: #333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+        }
+
+        table.gridtable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+
+        table.gridtable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Book Service Client</h1>
+    <ul>
+        <li><a href="#" id="listBooks">List books [get]</a></li>
+        <li><a href="#" id="createBook">Create book [post]</a></li>
+        <li><a href="#" id="editBook">Edit book [put]</a></li>
+        <li><a href="#" id="deleteBook">Delete book [delete]</a></li>
+    </ul>
+
+    <div style="width: 450px; float: left;" id="Listiv" hidden="true">
+        <table class="gridtable">
+            <thead>
+            <tr>
+                <td>Name</td>
+                <td>Isbn</td>
+                <td>Price</td>
+                <td>Published Date</td>
+            </tr>
+            </thead>
+            <tbody id="listTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <div style="width: 600px; float: left;" id="CreateDiv" hidden="true">
+        <fieldset>
+            <legend>Create a new Book</legend>
+
+            <div style="width: 100px; float: left; margin-left: 5px;">
+                <label>Name :</label>
+            </div>
+            <div style="width: 400px; float: left;">
+                <input type='text' id='createbookName' size='25'>
+            </div>
+            <div style="width: 100px; float: left; margin-left: 5px;">
+                <label>Isbn :</label>
+            </div>
+            <div style="width: 400px; float: left;">
+                <input type='text' id='createIsbn' size='10'>
+            </div>
+            <div style="width: 100px; float: left; margin-left: 5px;">
+                <label>Price :</label>
+            </div>
+            <div style="width: 400px; float: left;">
+                <input type='text' id='createPrice' size="10">
+            </div>
+            <div style="width: 100px; float: left; margin-left: 5px;">
+                <label>Published Date :</label>
+            </div>
+            <div style="width: 400px; float: left;">
+                <input type='text' id='createpublishedDate' size="20">
+            </div>
+            <form name="createBook" method="post" action="rest/list/create"
+                  id="createBook">
+                <div style="float: right;">
+                    <input type="button" value="Create" align="right" id="Create">
+                    <input type="button" value="Clear" align="right">
+                </div>
+            </form>
+        </fieldset>
+    </div>
+
+    <div style="width: 600px; float: left;" id="EditDiv" hidden="true">
+        <fieldset>
+            <legend>Edit Books</legend>
+
+            <div style="width: 100px; float: left; margin-left: 5px;">
+                <label>Name :</label>
+            </div>
+            <div style="width: 400px; float: left;">
+                <select id='editBookName'><option>Select a book
+                    title</option></select>
+            </div>
+            <div style="width: 100px; float: left; margin-left: 5px;">
+                <label>Isbn :</label>
+            </div>
+            <div style="width: 400px; float: left;">
+                <input type='text' id='editIsbn' size='10'>
+            </div>
+            </br>
+            <div style="width: 100px; float: left; margin-left: 5px;">
+                <label>Price :</label>
+            </div>
+            <div style="width: 400px; float: left;">
+                <input type='text' id='editPrice' size="10">
+            </div>
+            <div style="width: 100px; float: left; margin-left: 5px;">
+                <label>Published Date :</label>
+            </div>
+            <div style="width: 400px; float: left;">
+                <input type='text' id='editPublishedDate' size="20">
+            </div>
+            <form name="editBook" method="post" action="rest/list/edit"
+                  id="editBook">
+                <div style="float: right;">
+                    <input type="button" value="Edit" align="right" id="Edit">
+                    <input type="button" value="Clear" align="right">
+                </div>
+            </form>
+        </fieldset>
+    </div>
+
+    <div style="width: 450px; float: left;" id="DeleteDiv" hidden="true">
+        <h3>Select a book to delete</h3>
+        <ul id="bookUl">
+        </ul>
+    </div>
+
+</body>
+</html>
